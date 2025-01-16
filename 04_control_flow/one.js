@@ -48,9 +48,35 @@
 
 
 
-const userLoggedIn = true
 const debitCard = true
+const loggedInFromGoogle = false
+const loggedInFromEmail = true
 
-if(userLoggedIn && debitCard){
-    console.log(`allowed to buy courses
-}
+if((loggedInFromGoogle || loggedInFromEmail) && debitCard&& 2==2){
+    console.log(`allowed to buy courses`)
+} 
+
+if(loggedInFromEmail || loggedInFromGoogle)console.log(`user logged in`)
+
+
+// Nullish Coalescing Operator(??)
+//based on null and undefined
+
+// The nullish coalescing operator (??) is a logical operator in JavaScript used to provide a default value when the expression on the left-hand side is null or undefined.
+
+// You should use the nullish coalescing operator when you want to handle cases where a value might be null or undefined but still want to allow other falsy values (like 0, false, or an empty string) to be valid.
+
+let val1 
+// val1 = 5 ?? 10  ///here 5 gets assigned
+
+// val1 = null ?? 10 // here 10 gets assigned
+// val1 = undefined ?? 12 // here 12 het assigned to val1
+val1 = null ?? 10
+console.log(val1)
+
+
+//ternary operator
+// condition ? true : false
+
+const price = 100
+price>80 ? console.log(`greater than 80`) : console.log(`less than 80`)
