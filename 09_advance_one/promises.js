@@ -58,30 +58,51 @@
 
 
 
-const promiseFive = new Promise(function (resolve, reject) {
-    setTimeout(function () {
-        let error = true
-        if (!error) {
-            resolve({ username: "javascript", password: "456" })
-        } else {
-            reject('ERROR: Something went wrong ')
-        }
+
+// const promiseFive = new Promise(function (resolve, reject) {
+//     setTimeout(function () {
+//         let error = true
+//         if (!error) {
+//             resolve({ username: "javascript", password: "456" })
+//         } else {
+//             reject('ERROR: Something went wrong ')
+//         }
+//     })
+// })
+
+// async function consumePromiseFive() {
+//     try {
+//         const response = await promiseFive
+//         console.log(response)
+
+//     } catch (error) {
+//         console.log(`found error`)
+//     }
+// }
+
+// consumePromiseFive()
+
+
+
+
+
+// async function getAllUsers() {
+//     try {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//         // console.log(response)
+//         const data = await response.json()///.json() also takes time
+//         console.log(data)
+//     } catch (error) {
+//         console.log("E: ", error)
+//     }
+// }
+
+// getAllUsers()
+
+
+fetch('https://jsonplaceholder.typicode.com/users').then((response) => {
+    return response.json()
+}).then((data) => console.log(data))
+    .catch((error) => {
+        console.log("error is: ", error)
     })
-})
-
-async function consumePromiseFive() {
-    try {
-        const response = await promiseFive
-        console.log(response)
-
-    } catch (error) {
-        console.log(`found error`)
-    }
-}
-
-consumePromiseFive()
-
-
-async  function getAllUsers(){
-    fetch()
-}
